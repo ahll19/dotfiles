@@ -4,7 +4,7 @@ set -euo pipefail
 REPO_URL="${1:-}"
 MODE="${2:-}"
 
-GITDIR="$HOME/.cfg"
+GITDIR="$HOME/.dotfile_cfg"
 WORKTREE="$HOME"
 ALIAS_NAME="dotfile_config"
 ALIAS_CMD="git --git-dir=$GITDIR --work-tree=$WORKTREE"
