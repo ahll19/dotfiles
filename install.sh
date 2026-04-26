@@ -2,21 +2,9 @@
 # install.sh — Deploy dotfiles from origin/main (no alias, no tracking setup)
 set -euo pipefail
 
-REPO_URL="${1:-}"
+REPO_URL="https://github.com/ahll19/dotfiles.git"
 GITDIR="$HOME/.dotfile_cfg"
 WORKTREE="$HOME"
-
-usage() {
-  echo "Usage: install.sh <repo-url>"
-  echo ""
-  echo "Clones the dotfiles bare repo and checks out config files."
-  echo "Conflicting local files are backed up automatically."
-  exit 1
-}
-
-if [[ -z "$REPO_URL" ]]; then
-  usage
-fi
 
 function dotcfg() {
   git --git-dir="$GITDIR" --work-tree="$WORKTREE" "$@"
@@ -35,7 +23,6 @@ cat > "$GITDIR/info/sparse-checkout" <<EOF
 /*
 !README.md
 !LICENSE.md
-!setup.sh
 !install.sh
 !track.sh
 EOF

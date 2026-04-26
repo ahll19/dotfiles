@@ -24,7 +24,7 @@ There are two scripts depending on your use case.
 Clones the repo, checks out config files, backs up any conflicts, and registers the `dotfile_config` alias in your `.zshrc` so you can commit changes going forward.
 
 ```bash
-curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/track.sh | zsh -s -- https://github.com/ahll19/dotfiles.git
+curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/track.sh | zsh
 ```
 
 ### `install.sh` — Quick install (for machines you don't actively develop on)
@@ -32,7 +32,7 @@ curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/track.sh | zsh 
 Clones the repo and checks out config files only. No alias is added to your shell. Useful for deploying your config onto a remote server or a temporary machine.
 
 ```bash
-curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/install.sh | zsh -s -- https://github.com/ahll19/dotfiles.git
+curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/install.sh | zsh
 ```
 
 > Both scripts will automatically detect conflicting local files and back them up to `~/.config-backup-<timestamp>` before checking out.

@@ -2,25 +2,12 @@
 # track.sh — Clone dotfiles bare repo and set up shell alias for ongoing tracking
 set -euo pipefail
 
-REPO_URL="${1:-}"
+REPO_URL="https://github.com/ahll19/dotfiles.git"
 GITDIR="$HOME/.dotfile_cfg"
 WORKTREE="$HOME"
 ALIAS_NAME="dotfile_config"
 ALIAS_CMD="git --git-dir=$GITDIR --work-tree=$WORKTREE"
 ALIAS_LINE="alias $ALIAS_NAME='$ALIAS_CMD'"
-
-usage() {
-  echo "Usage: track.sh <repo-url>"
-  echo ""
-  echo "Clones the dotfiles bare repo, checks out config files,"
-  echo "and registers the '$ALIAS_NAME' alias in ~/.zshrc."
-  echo "Conflicting local files are backed up automatically."
-  exit 1
-}
-
-if [[ -z "$REPO_URL" ]]; then
-  usage
-fi
 
 function dotcfg() {
   git --git-dir="$GITDIR" --work-tree="$WORKTREE" "$@"
@@ -39,7 +26,6 @@ cat > "$GITDIR/info/sparse-checkout" <<EOF
 /*
 !README.md
 !LICENSE.md
-!setup.sh
 !install.sh
 !track.sh
 EOF
