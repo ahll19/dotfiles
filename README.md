@@ -11,9 +11,11 @@ By using a bare repository and a custom alias, we can track files directly in th
 
 ## Current software configs
 
-| Software | Directory |
+| Software | Directory/Path |
 | :--- | :--- |
 | Alacritty | `.config/alacritty` |
+| GithubCLI | `.config/gh` |
+| ZSH | `.zshrc` |
 
 ## Installation
 
