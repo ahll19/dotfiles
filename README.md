@@ -15,30 +15,20 @@ we can track files directly in the `$HOME` directory while keeping the Git metad
 | :--- | :--- |
 | Alacritty | `.config/alacritty` |
 
-## Installation
+### Installation
 
 ### Full Tracking Setup
-Use this method to initialize your dotfiles on a new machine.
-This will clone the repository, backup any conflicting local files,
-and set up the necessary shell alias.
+Use this method to initialize your dotfiles on a new machine. This will clone the repository, backup any conflicting local files, and set up the necessary shell alias in your `.zshrc`.
 
-**Via Curl:**
 ```bash
-curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/refs/heads/main/setup.sh | bash -s -- https://github.com/YOUR_USERNAME/YOUR_REPO.git --track
+curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/setup.sh | bash -s -- https://github.com/ahll19/dotfiles.git --track
 ```
 
-**Manual Execution:**
-1. Download the `setup.sh` script.
-2. Run the script with your repository URL and the `--track` flag:
-   ```bash
-   chmod +x setup.sh
-   ./setup.sh https://github.com/YOUR_USERNAME/YOUR_REPO.git --track
-   ```
-
 ### Quick Install (No Alias)
-If you only need to deploy the files without adding the alias to your `.zshrc`:
+If you only need to deploy the files and perform a one-time sync without modifying your shell configuration:
+
 ```bash
-./setup.sh https://github.com/YOUR_USERNAME/YOUR_REPO.git --install
+curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/setup.sh | bash -s -- https://github.com/ahll19/dotfiles.git --install
 ```
 
 ## Usage
