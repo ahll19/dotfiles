@@ -17,29 +17,15 @@ By using a bare repository and a custom alias, we can track files directly in th
 
 ## Installation
 
-There are two scripts depending on your use case.
-
-### `track.sh` — Full tracking setup (recommended for your own machine)
-
-Clones the repo, checks out config files, backs up any conflicts, and registers the `dotfile_config` alias in your `.zshrc` so you can commit changes going forward.
-
 ```bash
-curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/track.sh | zsh
+curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/setup.sh | zsh
 ```
 
-### `install.sh` — Quick install (for machines you don't actively develop on)
-
-Clones the repo and checks out config files only. No alias is added to your shell. Useful for deploying your config onto a remote server or a temporary machine.
-
-```bash
-curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/install.sh | zsh
-```
-
-> Both scripts will automatically detect conflicting local files and back them up to `~/.config-backup-<timestamp>` before checking out.
+Clones the repo, checks out config files, backs up any conflicts to `~/.config-backup-<timestamp>`, and registers the `dotfile_config` alias in `~/.zshrc`.
 
 ## Usage
 
-After running `track.sh`, use the `dotfile_config` alias instead of `git` for managing your dotfiles:
+After installation, use the `dotfile_config` alias instead of `git`:
 
 | Command | Description |
 | :--- | :--- |
@@ -48,5 +34,4 @@ After running `track.sh`, use the `dotfile_config` alias instead of `git` for ma
 | `dotfile_config commit -m "update"` | Commit changes |
 | `dotfile_config push` | Push changes to the remote repository |
 
-**Note:** Untracked files in your `$HOME` directory are hidden by default to keep the `status` command clean.
-Only files you explicitly `add` will be tracked.
+**Note:** Untracked files in `$HOME` are hidden by default to keep `status` clean. Only files you explicitly `add` will be tracked.

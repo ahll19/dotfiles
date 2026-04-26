@@ -1,10 +1,12 @@
 #!/bin/zsh
-# install.sh — Deploy dotfiles from origin/main (no alias, no tracking setup)
 set -euo pipefail
 
 REPO_URL="https://github.com/ahll19/dotfiles.git"
 GITDIR="$HOME/.dotfile_cfg"
 WORKTREE="$HOME"
+ALIAS_NAME="dotfile_config"
+ALIAS_CMD="git --git-dir=$GITDIR --work-tree=$WORKTREE"
+ALIAS_LINE="alias $ALIAS_NAME='$ALIAS_CMD'"
 
 function dotcfg() {
   git --git-dir="$GITDIR" --work-tree="$WORKTREE" "$@"
@@ -23,8 +25,7 @@ cat > "$GITDIR/info/sparse-checkout" <<EOF
 /*
 !README.md
 !LICENSE.md
-!install.sh
-!track.sh
+!setup.sh
 EOF
 
 echo "Checking out dotfiles..."
@@ -48,4 +49,22 @@ if [[ $STATUS -ne 0 ]]; then
 fi
 
 rm -f checkout_err.log
-echo "Done. Dotfiles installed."
+
+dotcfg config --local status.showUntrackedFiles no
+
+if ! grep -Fxq "$ALIAS_LINE" "$HOME/.zshrc"; then
+  echo "Adding alias to ~/.zshrc..."
+  echo "$ALIAS_LINE" >> "$HOME/.zshrc"
+else
+  echo "Alias already present in ~/.zshrc, skipping"
+fi
+
+echo ""
+echo "Done. Restart your shell or run:"
+echo "  source ~/.zshrc"
+echo ""
+echo "Then manage your dotfiles with:"
+echo "  $ALIAS_NAME status"
+echo "  $ALIAS_NAME add .config/someapp/config"
+echo "  $ALIAS_NAME commit -m 'add config'"
+echo "  $ALIAS_NAME push"
