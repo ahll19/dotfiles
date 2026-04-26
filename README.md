@@ -24,7 +24,7 @@ and set up the necessary shell alias.
 
 **Via Curl:**
 ```bash
-curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/setup.sh | bash -s -- https://github.com/YOUR_USERNAME/YOUR_REPO.git --track
+curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/refs/heads/main/setup.sh | bash -s -- https://github.com/YOUR_USERNAME/YOUR_REPO.git --track
 ```
 
 **Manual Execution:**
