@@ -15,13 +15,13 @@ we can track files directly in the `$HOME` directory while keeping the Git metad
 | :--- | :--- |
 | Alacritty | `.config/alacritty` |
 
-### Installation
+## Installation
 
 ### Full Tracking Setup
 Use this method to initialize your dotfiles on a new machine. This will clone the repository, backup any conflicting local files, and set up the necessary shell alias in your `.zshrc`.
 
 ```bash
-curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/setup.sh | bash -s -- https://github.com/ahll19/dotfiles.git --track
+curl -Lks https://raw.githubusercontent.com/ahll19/dotfiles/main/setup.sh | bash -s -- https://github.com/<your_user>/<your_repo>.git --track
 ```
 
 ### Quick Install (No Alias)
