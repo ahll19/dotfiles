@@ -36,6 +36,16 @@ function dotcfg() {
 git --git-dir="$GITDIR" --work-tree="$WORKTREE" "$@"
 }
 
+dotcfg config core.sparseCheckout true
+
+mkdir -p "$GITDIR/info"
+cat > "$GITDIR/info/sparse-checkout" <<EOF
+/*
+!README.md
+!LICENSE.md
+!setup.sh
+EOF
+
 echo "Checking out dotfiles..."
 
 set +e
