@@ -16,7 +16,7 @@ By using a bare repository and a custom alias, we can track files directly in th
 | Alacritty | `.config/alacritty` |
 | GithubCLI | `.config/gh` |
 | ZSH | `.zshrc` |
-| Zellij | `.zshrc`, `.config/zellij` |
+| Zellij | `.config/zellij` |
 
 ## Installation
 
