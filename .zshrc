@@ -30,4 +30,4 @@ source $ZSH/oh-my-zsh.sh
 eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(fzf --zsh)"
 
-alias dotfile_config='git --git-dir=/home/anders/.dotfile_cfg --work-tree=/home/anders'
+alias dotfile_config='git --git-dir=$HOME/.dotfile_cfg --work-tree=$HOME'
