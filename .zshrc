@@ -30,4 +30,5 @@ source $ZSH/oh-my-zsh.sh
 eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(fzf --zsh)"
 
+alias opencode="ollama launch opencode"
 alias dotfile_config='git --git-dir=$HOME/.dotfile_cfg --work-tree=$HOME'
