@@ -1,6 +1,6 @@
 [window]
-# decorations = "None"
-opacity = 0.95
+decorations = "None"
+opacity = 0.9
 
 [font]
 normal = {family = "FiraMono Nerd Font", style = "Regular"}
