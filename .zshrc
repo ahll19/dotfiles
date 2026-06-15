@@ -27,6 +27,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/Scripts/autoexec.sh
 eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(fzf --zsh)"
 
