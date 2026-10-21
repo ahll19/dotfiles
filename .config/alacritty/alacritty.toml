@@ -1,6 +1,6 @@
 [window]
 # decorations = "None"
-opacity = 0.9
+opacity = 0.4
 
 [font]
 normal = {family = "JetBrainsMono Nerd Font Mono", style = "Regular"}

@@ -33,3 +33,4 @@ eval "$(fzf --zsh)"
 
 alias opencode="ollama launch opencode"
 alias dotfile_config='git --git-dir=$HOME/.dotfile_cfg --work-tree=$HOME'
+export PATH="$HOME/.local/bin:$PATH"
